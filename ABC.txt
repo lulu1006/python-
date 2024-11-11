@@ -1,0 +1,239 @@
+ program 1:to claculate year in which the user will turn 100 years old based on thair current age.
+name = input("Enter your name: ")
+age = int(input("Enter your age: "))
+year = str((2024 - age) + 100)
+print(name + " will be 100 years old in the year " + year)
+ #program2:to determine weather a given number is eveen or odd.
+a=int(input("enter a number"))
+if a%2==0:
+    print("number is even")
+else:
+     print("number is odd"
+#program3:to print the feboonic seqence up number is even or odd.
+def fibo(n):
+     a,b=0,1
+     while a<n:
+         print(a,end='')
+         a,b=b,a+b
+         print()
+fibo(7)
+ #program4:reverse the digits of a given and print result.
+
+def revnum(n):
+    sum=0
+    while n!=0:
+        num=n%10
+        sum=num+sum*10
+        n=n//10
+        print("reverse number:",sum)
+num=int(input("enter your number"))
+revnum(num)
+ #program5:to find the number is armstrong or polistrom
+def armnum(num):
+    sum = 0
+    temp = num
+    while temp > 0:
+        digit = temp % 10
+        sum += digit ** 3
+        temp //= 10
+    if num == sum:
+        print(num, "is an Armstrong number")
+    else:
+        print(num, "is not an Armstrong number")
+def palnum(num):
+    sum = 0
+    temp = num
+    while num > 0:
+        rem = num % 10
+        sum = rem + sum * 10
+        num //= 10
+    if temp == sum:
+        print(temp, "is a palindrome number")
+    else:
+        print(temp, "is not a palindrome number")
+
+def revnum(n):
+    sum = 0
+    while n > 0:
+        rem = n % 10
+        sum = rem + sum * 10
+        n //= 10
+    print("Reverse number:", sum)
+num = int(input("Enter any number: "))
+armnum(num)
+palnum(num)
+revnum(num)
+ #program6: to find factorial  
+def fact(x):
+    if x == 1 or x == 0:
+        return 1
+    else:
+        return x * fact(x - 1)
+
+num = int(input("Enter any number: "))
+print("The factorial of", num, "is", fact(num))
+
+#practical 2a:program for vowel and constant
+def uchk(ch):
+    if ch in ('a', 'A', 'e', 'E', 'i', 'I', 'o', 'O', 'u', 'U'):
+        print(ch, "is a vowel.")
+    else:
+        print(ch, "is not a vowel.")
+
+ch = input("Enter any character (a-z/A-Z): ")
+uchk(ch)
+#practical 2b:length of a string 
+def calen(n):
+    count = 0
+    for i in n:
+        count += 1
+    return count
+
+print(calen([1, 3, 5, 7, 9]))
+print(calen("sonali"))
+
+#practical 2c:histogram
+def histogram(inputlist):
+    for i in range(len(inputlist)):
+        print(inputlist[i] * '*')
+
+list = [4, 9, 7]
+histogram(list)
+                                     #praactical.3#
+#practical3a:all latters of alphabets
+
+import string
+
+def ispangram(str1, alphabet=string.ascii_lowercase):
+    alphaset = set(alphabet)
+    return alphaset <= set(str1.lower())
+
+print(ispangram("The quick brown fox jumps over the lazy dog"))
+
+#practical3b:print the elements of the list that of the list that are less than5.
+
+a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+
+for i in a:
+    if i < 5:
+        print(i)
+
+                                          #practical.4#
+
+#Check if two lists have any common elements.
+def find_common(st1, st2):
+    res = False
+    for x in st1:
+        for y in st2:
+            if x == y:
+                res = True
+    return res
+
+print(find_common([4, 6, 8, 10, 12], [5, 7, 8, 10, 11]))  # Output: True
+print(find_common([3, 5, 7, 9, 11], [2, 4, 6, 8]))        # Output: false
+
+#Check if two lists have any common elements.
+def find_common(st1, st2):
+    res = False
+    for x in st1:
+        for y in st2:
+            if x == y:
+                res = True
+    return res
+
+print(find_common([4, 6, 8, 10, 12], [5, 7, 8, 10, 11]))  # Output: True
+print(find_common([3, 5, 7, 9, 11], [2, 4, 6, 8]))        # Output: False
+
+#Create an exact copy of a list
+list1 = [10, 20, 30, 40, 50, 60, 70, 80, 90]
+clonelist = list(list1)
+print("Original list:", list1)
+print("Cloned list:", clonelist)
+
+                                       #practical.5#
+
+#A Sort a dictionary in ascending and descending order by its keys
+
+
+import operator
+
+# Original dictionary
+dict = {1: 12, 3: 14, 4: 13, 2: 11, 0: 10}
+print("The original dictionary is:", dict)
+
+# Sorting in ascending order by key
+ascending = sorted(dict.items(), key=operator.itemgetter(0))
+print("Dictionary in ascending order by key:", ascending)
+
+# Sorting in descending order by key
+descending = sorted(dict.items(), key=operator.itemgetter(0), reverse=True)
+print("Dictionary in descending order by key:", descending)
+
+
+
+#B Combine multiple dictionaries into one
+
+dict1 = {1: 10, 2: 20}
+dict2 = {3: 30, 4: 40}
+dict3 = {5: 50, 6: 60}
+dict4 = {}
+
+for i in (dict1, dict2, dict3):
+    dict4.update(i)
+
+print(dict4)
+
+#C Find the sum of all values in a dictionary
+dict={'data1':140,'data2':-54,'data3':315}
+print(sum(dict.values()))
+                                    #practical .6#
+
+#A .proram to read and entire text file
+f=open("abc.txt","r")
+t=f.read()
+print(t)
+f.close()
+
+#B aim:program to append text to a file and display text
+f = open("abc.txt","a+")
+f.write("\n welcome to python world! \n")
+f.write("\n python is easy to learn \n")
+f=open("abc.txt","r")
+t = f.read()
+print(t)
+f.close()
+
+#C .read last line of a file 
+f=open("abc.txt","r")
+t=f.readlines()
+print(t[-1])
+f.close()
+
+                                     #practical .7#
+
+#A .class that store information
+class student:
+  def info(self, studname,studaddress, studclass):
+     print("name:", studname)
+     print("address:",studaddress)
+     print("class:", studclass)
+obj=student()
+obj.info('veda','airoli', 'syit')
+
+#B.implement the concept of inheritance 
+class st:
+    def s1(self):
+        print("base class")
+
+class st1(st):
+    def s2(self):
+        print("derived class")
+
+# Create an object of st1
+t = st1()
+
+# Call the method from base class
+t.s1()
+
+# Call the method from derived class
+t.s2()
